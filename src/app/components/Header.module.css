@@ -1,21 +1,24 @@
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 60px;
-  display: flex;
-  justify-content: flex-end;
   background-color: #424aee;
+  display: flex;
   align-items: center;
-  padding: 0 10px;
+  justify-content: space-between;
+  padding: 0 20px;
   box-sizing: border-box;
-  
 }
 
 .nav {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .button {
@@ -27,9 +30,44 @@
   border-radius: 4px;
 }
 
-.d{
-  height: 200px;
-  width: 100vw;
-  margin-top: 80px;
-  border: 2px solid red;
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+.icon {
+  border-radius: 50%;  
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buttons {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.buttons:hover {
+  background-color: #e0e0e0;
 }

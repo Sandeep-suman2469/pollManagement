@@ -5,7 +5,8 @@
   width: 100vw;
   height: 70px;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
   background-color: #424aee;
   align-items: center;
   padding: 0 10px;
@@ -27,9 +28,20 @@
   border-radius: 4px;
 }
 
-.d{
+/* .d{
   height: 200px;
   width: 100vw;
   margin-top: 80px;
   border: 2px solid red;
+} */
+
+.content{
+  margin-top: 140px;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  border-radius: 50%;  
 }

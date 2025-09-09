@@ -1,59 +1,43 @@
 'use client'
-
 import styles from '../home/home.module.css';
-import {useState, useEffect } from 'react';
 import Header from '../components/Header';
-// import {getPosts} from '../api/page'
+import User1 from '../user1/page';
+import User2 from '../user2/page';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { getCookie } from 'cookies-next';
+import { useEffect } from 'react';
+
+
 export default function HomePage() {
+  const router = useRouter();
+  useEffect(()=>{
+    const token = getCookie('userData');
+    console.log("Hvvjbdhk" ,token)
+   
 
-  const [apiData, setApiData] = useState('');
-
-  // const getPosts = async () => {
-  //   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-  //     method: "GET",
-  //   });
-  //   const data = await response.json();
-    
-  //   setApiData(data);
-  // };
-
-//   const getPosts = async() => {
-//    const response = await fetch('https://jsonplaceholder.typicode.com/posts',{
-//       method: 'GET',
-//    });
-//   // return response.json();
-// }
-
-async function fetchData() {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const data = await response.json();
-        setApiData(data); // Update the state with the fetched data
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+    if(!token){
+      router.push('/login')
     }
-  // useEffect(()=>{
-  //   getPosts().then((posts)=> console.log(posts));
-  // }, [])
+  },[router]) 
+
 
   return (
     <>
-     
+
     <Header/>
     <div className={styles.container}>
-      <div className={styles.aside}><button onClick={fetchData}> User Data</button>
+      <div className={styles.aside}>
+         <Link href="/user1" className={styles.button}>User1</Link><br/> <br/> <br/>
+         <Link href="/user2" className={styles.button}>User2</Link>
          </div>
-      <div className={styles.section}>{apiData ? (
-        <ul>
-          {apiData.map((item, index) => (
-            <li key={index}>{item.id}  {item.body}</li> // Example rendering
-          ))}
-        </ul>
-      ) : (
-        <p>Click the button to load data.</p>
-      )}</div>
+      <div className={styles.section}></div>
+     
     </div> 
     </>
   );
 }
+
+
+
+
