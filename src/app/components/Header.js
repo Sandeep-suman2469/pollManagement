@@ -45,12 +45,13 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img            
+        <img
+                      
             src="/logo.jpeg"
             alt="user icon"
-            width="90"
-            height="50"
-            className={styles.icon} />
+            width="70"
+            height="45"
+             />
       </div>
 
       <nav className={styles.nav}>
